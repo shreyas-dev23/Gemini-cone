@@ -10,10 +10,12 @@ const ai = new GoogleGenAI({
 
 async function main(prompt) {
   const response = await ai.models.generateContent({
-    model: "gemini-2.0-flash",
+    model: "gemini-2.0-flash-lite",
     contents: prompt,
   });
+
   console.log(response.text);
+  return response.text;
 }
 
 export default await main;
